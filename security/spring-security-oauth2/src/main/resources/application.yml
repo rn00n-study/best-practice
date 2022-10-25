@@ -1,0 +1,18 @@
+server:
+  port: 5000
+  max-http-header-size: 400000
+
+spring:
+  config:
+    use-legacy-processing: true
+  profiles:
+    include:
+      - database
+
+infra:
+  port: ${server.port}
+  http: https://
+  domain:
+    server: bestpractice.rn00n.com # 서버 TODO # 개설 안함.
+    service: bestpractice.rn00n.com # 서버 TODO # 개설 안함.
+  bucket: https://rn00n-bestpractice.s3.ap-northeast-2.amazonaws.com # 서버 TODO # 개설 안함.

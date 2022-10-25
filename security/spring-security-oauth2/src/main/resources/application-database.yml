@@ -1,0 +1,17 @@
+spring:
+  h2:
+    console:
+      enabled: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rn00n-bestpractice-mysql.:3306/bestpractice # 개설 안함.
+    username: bestpractice # 개설 안함.
+    password: bestpractice221025! # 개설 안함.
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        default_batch_fetch_size: 3

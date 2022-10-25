@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: local
+  h2:
+    console:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/bestpractice?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: bestpractice
+    password: bestpractice221025!
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+infra:
+  port: ${server.port}
+  http: http://
+  domain:
+    server: localhost:${server.port}
+    service: localhost:${server.port}

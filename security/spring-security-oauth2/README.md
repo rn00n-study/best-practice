@@ -1,0 +1,9 @@
+# Spring Security OAuth2
+
+## MYSQL DDL Query
+```
+CREATE DATABASE BESTPRACTICE DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'bestpractice'@'%' IDENTIFIED BY 'bestpractice221025!';
+GRANT ALL PRIVILEGES ON BESTPRACTICE.* TO 'bestpractice'@'%';
+FLUSH PRIVILEGES;
+```
