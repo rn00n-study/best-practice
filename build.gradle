@@ -1,0 +1,59 @@
+buildscript {
+    ext {
+        springBootVersion = '2.7.5'
+        dependencyManagementVersion = '1.0.15.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        dependencies {
+            classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+            classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementVersion}"
+        }
+    }
+}
+
+subprojects {
+    group 'com.rn00n.bestpractice'
+    version '0.0.1'
+
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    sourceCompatibility = '11'
+
+    repositories {
+        mavenCentral()
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    dependencies {
+        developmentOnly 'org.springframework.boot:spring-boot-devtools'
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.springframework.security:spring-security-test'
+
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+        implementation group: 'javax.validation', name: 'validation-api' // valid dependency
+
+        implementation 'org.apache.commons:commons-lang3' // random library
+        implementation 'org.apache.commons:commons-collections4:4.4' // random library
+
+        implementation fileTree(dir: 'libs', includes: ['*jar']) // 외부 library
+    }
+
+}
