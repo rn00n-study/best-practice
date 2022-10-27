@@ -35,7 +35,7 @@ public class BoardDto {
             return Response.builder()
                     .id(board.getId())
                     .title(board.getTitle())
-                    .content(board.getContent()¬)
+                    .content(board.getContent())
                     .build();
         }
     }

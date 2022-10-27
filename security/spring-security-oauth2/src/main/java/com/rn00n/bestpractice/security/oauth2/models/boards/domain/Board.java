@@ -1,5 +1,6 @@
 package com.rn00n.bestpractice.security.oauth2.models.boards.domain;
 
+import com.rn00n.bestpractice.security.oauth2.models.boards.Account;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,5 +22,8 @@ public class Board {
 
     @Lob
     private String content;
+
+    @ManyToOne
+    private Account writer;
 
 }

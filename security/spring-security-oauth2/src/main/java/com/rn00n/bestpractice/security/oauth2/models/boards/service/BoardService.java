@@ -29,11 +29,6 @@ public class BoardService {
                 .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 board id 입니다."));
     }
 
-    public Page<BoardDto.Response> search(BoardDto.Search dto, Pageable pageable) {
-        Page<Board> boardPage = repository.findByTitleContainsOrContentContains(dto.getSearch(), pageable);
-        return boardPage.map(BoardDto.Response::of);
-    }
-
     public Page<BoardDto.Response> searchQDSL(BoardDto.Search dto, Pageable pageable) {
         List<String> strings1 = List.of("1", "2");
         List<String> strings2 = List.of("3", "4");
