@@ -1,0 +1,13 @@
+dependencies {
+
+}
+
+String versionString = version
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = false
+}
